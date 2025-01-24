@@ -3,82 +3,92 @@ title: Erlang
 ---
 
 import { Callout } from 'nextra/components'
-import Features from 'components/features'
 import { Bleed } from 'nextra-theme-docs'
+import { Tabs } from 'nextra/components'
+import { Link } from 'nextra-theme-docs'
+import styles from '@components/cta.module.css'
+import { clsx } from 'clsx';
 
 {
 // wrapped with {} to mark it as javascript so mdx will not put it under a p tag
 }
-{<h1 className="text-center text-4xl tracking-tighter font-extrabold md:text-5xl mt-8">Erlang</h1>}
+{<h1 className={clsx(styles.headline, "hidden md:block")}>The Erlang Programming Language</h1>}
+{<h1 className={clsx(styles.headline, "md:hidden")}>Erlang</h1>}
+{/* {<h1 className={"text-4xl tracking-tighter font-extrabold md:text-5xl mt-8"}>The Erlang Programming Language</h1>} */}
+{/* # The Erlang Programming Language [#overview] */}
 
-<Bleed><Features/></Bleed>
+<p className="mt-6 tracking-tight mb-2 text-lg text-gray-600 md:!text-2xl">Practical functional programming for a parallel world</p>
 
-The name “SWR” is derived from `stale-while-revalidate`, a HTTP cache invalidation strategy popularized by [HTTP RFC 5861](https://tools.ietf.org/html/rfc5861).
-Erlang is a strategy to first return the data from cache (stale), then send the fetch request (revalidate), and finally come with the up-to-date data.
+Erlang is a programming language used to build massively scalable soft real-time systems with requirements on high availability. Some of its uses are in telecoms, banking, e-commerce, computer telephony and instant messaging. Erlang's runtime system has built-in support for concurrency, distribution and fault tolerance.
 
-<Callout emoji="✅">
-  With Erlang, components will get a stream of data updates <strong>constantly</strong> and <strong>automatically</strong>.<br/>
-  And the UI will be always <strong>fast</strong> and <strong>reactive</strong>.
-</Callout>
+{/* <div className="mt-16 mb-20 text-center">
+  [Erlang Quickstart]()
+</div> */}
 
-<div className="mt-16 mb-20 text-center">
-  [Get Started](/docs/getting-started) · [Examples](/examples/basic) · [Blog](/blog) · [GitHub Repository](https://github.com/vercel/swr)
+<div className='flex xjustify-center mt-4'>
+        <Link className={styles.cta} href="https://www.erlang.org/doc/system/getting_started.html">
+          Erlang Quickstart <span>→</span>
+        </Link>
 </div>
+{/* <a className="x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font] page_cta__i2v5_">
+  Erlang Quickstart
+</a> */}
+
+## What is OTP? [#overview]
+
+OTP is set of Erlang libraries and design principles providing middle-ware to develop these systems. It includes its own distributed database, applications to interface towards other languages, debugging and release handling tools.
+[Get started with OTP](https://www.erlang.org/doc/system/design_principles.html)
 
 ## Overview [#overview]
 
-```jsx
-import useSWR from 'swr'
+<Tabs items={['Functional programming', 'Higher-order functions', 'Lightweight processes','Parallel map-reduce'  ]}>
+  <Tabs.Tab>
+```erlang
+fact(0) -> 1;              %% Pattern matching for control-flow
+fact(N) -> N * fact(N-1).  %% Recursion to create loops
 
-function Profile() {
-  const { data, error, isLoading } = useSWR('/api/user', fetcher)
-
-  if (error) return <div>failed to load</div>
-  if (isLoading) return <div>loading...</div>
-  return <div>hello {data.name}!</div>
-}
+> example:fact(10).        %% Interactive shell for fast iterations
+3628800
+> [{I, example:fact(I)} || I <- lists:seq(1,10)].
+[{1, 1}, {2, 2}, {3, 6}, {4, 24}, {5, 120}, {6, 720},
+ {7, 5040}, {8, 40320}, {9, 362880}, {10, 3628800}]
 ```
+  </Tabs.Tab>
+  <Tabs.Tab>
+```erlang
+> Fruits = ["banana","monkey","jungle"].     %% Immutable variables
+["banana","monkey","jungle"]
+> lists:map(fun string:uppercase/1, Fruits). %% Map values using stdlib functions
+["BANANA","MONKEY","JUNGLE"]
+%% Fold over lists using custom functions
+> lists:foldl(fun(Str, Cnt) -> string:length(Str) + Cnt end, 0, Fruits).
+18
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+```erlang
+> Parent = self().                         %% Get own process id
+<0.376.0>
+> Child = spawn(fun() -> receive go -> Parent ! lists:seq(1,100) end end).
+<0.930.0>
+> Child ! go.                              %% Send message to child
+go
+> receive Reply -> Reply end.              %% Receive response from child
+[1,2,3,4,5,6,7,8,9,10,11|...]
+```
+  </Tabs.Tab>
+  <Tabs.Tab>
+```erlang
+%% Find even numbers
+-spec even(list(integer())) -> list(integer()).
+even(Numbers) ->
+  mapreduce(Numbers, fun(Number) -> Number rem 2 == 0 end).
+mapreduce(Numbers, Function) ->
+  Parent = self(),
+  [spawn(fun() -> Parent ! {Number, Function(Number)} end) || Number <- Numbers],
+  lists:flatten(
+    [receive {Number, true} -> Number; _ -> [] end || Number <- Numbers]).
+```
+  </Tabs.Tab>
+</Tabs>
 
-In this example, the `useSWR` hook accepts a `key` string and a `fetcher` function. `key` is a unique identifier of the data (normally the API URL)
-and will be passed to `fetcher`. `fetcher` can be any asynchronous function which returns the data, you can use the native fetch or tools like Axios.
-
-The hook returns 3 values: `data`, `isLoading` and `error`, based on the status of the request.
-
-## Features [#features]
-
-With just one single line of code, you can simplify the logic of data fetching in your project, and also have all these amazing features out-of-the-box:
-
-- **Fast**, **lightweight** and **reusable** data fetching
-- Built-in **cache** and request deduplication
-- **Real-time** experience
-- Transport and protocol agnostic
-- SSR / ISR / SSG support
-- TypeScript ready
-- React Native
-
-Erlang has you covered in all aspects of speed, correctness, and stability to help you build better experiences:
-
-- Fast page navigation
-- Polling on interval
-- Data dependency
-- Revalidation on focus
-- Revalidation on network recovery
-- Local mutation (Optimistic UI)
-- Smart error retry
-- Pagination and scroll position recovery
-- React Suspense
-
-And a lot [more](/docs/getting-started).
-
-## Community [#community]
-
-<p className="flex h-6 mt-4 gap-2">
-  <img alt="stars" src="https://badgen.net/github/stars/vercel/swr" />
-  <img alt="downloads" src="https://badgen.net/npm/dt/swr" />
-  <img alt="license" src="https://badgen.net/npm/license/swr" />
-</p>
-
-Erlang is created by the same team behind [Next.js](https://nextjs.org), the React framework.
-Follow [@vercel](https://twitter.com/vercel) on Twitter for future project updates.
-
-Feel free to join the [discussions on GitHub](https://github.com/vercel/swr/discussions)!

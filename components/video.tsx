@@ -2,12 +2,11 @@ import "intersection-observer";
 import { useCallback, useEffect, useRef } from "react";
 import { useInView } from "react-intersection-observer";
 
-
 export default function Video({ src, caption, ratio, className = "" }) {
   const [inViewRef, inView] = useInView({
     threshold: 1,
   });
-  const videoRef = useRef();
+  const videoRef = useRef<HTMLVideoElement>();
 
   const setRefs = useCallback(
     (node) => {
@@ -26,7 +25,7 @@ export default function Video({ src, caption, ratio, className = "" }) {
         });
       }
     },
-    [inViewRef]
+    [inViewRef],
   );
 
   useEffect(() => {
@@ -66,4 +65,4 @@ export default function Video({ src, caption, ratio, className = "" }) {
       )}
     </div>
   );
-};
+}

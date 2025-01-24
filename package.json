@@ -1,34 +1,38 @@
 {
-  "name": "swr-site",
-  "version": "1.0.0",
+  "name": "erlang-org",
+  "version": "2.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "next",
     "debug": "NODE_OPTIONS='--inspect' next",
     "start": "next start",
-    "build": "next build"
+    "build": "next build",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,md,css,scss,json}\""
   },
-  "author": "Shu Ding",
-  "license": "Apache-2.0",
+  "author": "Hichem Fantar",
   "dependencies": {
     "@vercel/analytics": "^0.1.11",
+    "clsx": "^2.0.0",
     "focus-visible": "^5.2.0",
     "intersection-observer": "^0.12.2",
-    "next": "^13.5.8",
+    "next": "^14",
     "nextra": "^3",
     "nextra-theme-docs": "^3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-intersection-observer": "^9.4.3"
+    "react-intersection-observer": "^9.4.3",
+    "tailwind-merge": "^2.6.0"
   },
   "devDependencies": {
+    "@types/node": "22.10.10",
+    "@types/react": "^18.2.23",
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.21",
+    "prettier": "^3.4.2",
     "tailwindcss": "^3.2.7"
   },
   "prettier": {
-    "embeddedLanguageFormatting": "off",
-    "htmlWhitespaceSensitivity": "strict"
+    "embeddedLanguageFormatting": "off"
   }
 }

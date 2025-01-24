@@ -1,9 +1,9 @@
-import { getPagesUnderRoute } from "nextra/context";
+// @ts-nocheck
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { getPagesUnderRoute } from "nextra/context";
 
-export default function BlogIndex({ more = "Read more" }) {
-  return (getPagesUnderRoute("/blog")).map((page) => {
+export default function NewsIndex({ more = "Read more" }) {
+  return getPagesUnderRoute("/news").map((page) => {
     return (
       <div key={page.route} className="mb-10">
         <h3>
@@ -34,5 +34,4 @@ export default function BlogIndex({ more = "Read more" }) {
       </div>
     );
   });
- 
 }
