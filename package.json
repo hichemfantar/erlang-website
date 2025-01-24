@@ -1,7 +1,7 @@
 {
   "name": "erlang-org",
   "version": "2.0.0",
-  "description": "",
+  "description": "The erlang.org website",
   "main": "index.js",
   "scripts": {
     "dev": "next",
