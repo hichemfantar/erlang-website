@@ -2,7 +2,6 @@
   "name": "erlang-org",
   "version": "2.0.0",
   "description": "The erlang.org website",
-  "main": "index.js",
   "scripts": {
     "dev": "next",
     "debug": "NODE_OPTIONS='--inspect' next",
