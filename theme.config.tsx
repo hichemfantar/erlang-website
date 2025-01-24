@@ -2,6 +2,8 @@ import { useRouter } from "next/router";
 import { DocsThemeConfig, useConfig } from "nextra-theme-docs";
 import Logo from "@components/logo";
 
+const projectName = "Erlang";
+
 const themeConfig: DocsThemeConfig = {
   project: {
     link: "https://github.com/erlang",
@@ -32,7 +34,7 @@ const themeConfig: DocsThemeConfig = {
     const { route, locales, locale } = useRouter();
     const { frontMatter, title } = useConfig();
     const titleSuffix = "Practical functional programming for a parallel world";
-    // const description = useLocalesMap(headDescriptionMap);
+    const description = "The official home of the Erlang Programming Language";
 
     const imageUrl = new URL("https://swr-card.vercel.app");
 
@@ -41,14 +43,17 @@ const themeConfig: DocsThemeConfig = {
     }
 
     const contentLanguage = "en";
-    const ogTitle = title ? `${title} - Erlang` : `Erlang: ${titleSuffix}`;
-    const ogDescription = frontMatter.description || "description";
+    const ogTitle = title
+      ? `${title} - ${projectName}`
+      : `${projectName}: ${titleSuffix}`;
+    const ogDescription = frontMatter.description || description;
     const ogImage = frontMatter.image || imageUrl.toString();
+    <title>{title + " - " + projectName}</title>;
 
     return (
       <>
         {/* Favicons, meta */}
-        <title>{"%s - Erlang"}</title>
+        <title>{ogTitle}</title>
         <link
           rel="apple-touch-icon"
           sizes="180x180"
