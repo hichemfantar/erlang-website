@@ -1,0 +1,36 @@
+import { Callout } from 'nextra/components'
+
+# Mutation & Revalidation
+
+SWR provides the [`mutate`](/docs/mutation#mutate) and [`useSWRMutation`](/docs/mutation#useswrmutation) APIs for mutating remote data and related cache.
+
+## `mutate` [#mutate]
+
+There're 2 ways to use the `mutate` API to mutate the data, the global mutate API which can mutate any key and the bound mutate API which only can mutate the data of corresponding SWR hook.
+
+#### Global Mutate [#global-mutate]
+
+The recommended way to get the global mutator is to use the [`useSWRConfig`](/docs/global-configuration#access-to-global-configurations) hook:
+
+```js
+import { useSWRConfig } from "swr"
+
+function App() {
+  const { mutate } = useSWRConfig()
+  mutate(key, data, options)
+}
+```
+
+You can also import it globally:
+
+```js
+import { mutate } from "swr"
+
+function App() {
+  mutate(key, data, options)
+}
+```
+
+{/* <Callout emoji="⚠️">
+  Using global mutator only with the `key` parameter will ***not update the cache or trigger revalidation*** unless there is a mounted SWR hook using the same key.
+</Callout> */}
