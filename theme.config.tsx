@@ -36,7 +36,7 @@ const themeConfig: DocsThemeConfig = {
     const titleSuffix = "Practical functional programming for a parallel world";
     const description = "The official home of the Erlang Programming Language";
 
-    const imageUrl = new URL("https://swr-card.vercel.app");
+    const imageUrl = new URL("https://sswr-card.vercel.app");
 
     if (!/\/index\.+/.test(route)) {
       imageUrl.searchParams.set("title", title || titleSuffix);
