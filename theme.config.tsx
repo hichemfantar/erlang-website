@@ -12,6 +12,7 @@ const themeConfig: DocsThemeConfig = {
   toc: {
     float: true,
   },
+  sidebar: {},
   search: {
     placeholder: "Search erlang.org",
   },

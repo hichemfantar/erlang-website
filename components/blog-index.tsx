@@ -1,5 +1,5 @@
 // @ts-nocheck
-import Link from "next/link";
+import { Link } from "nextra-theme-docs";
 import { getPagesUnderRoute } from "nextra/context";
 
 export default function BlogIndex({ more = "Read more" }) {
@@ -18,16 +18,13 @@ export default function BlogIndex({ more = "Read more" }) {
         <p className="opacity-80 mt-6 leading-7">
           {page.frontMatter?.description}{" "}
           <span className="inline-block">
-            <Link
-              href={page.route}
-              className="text-[color:hsl(var(--nextra-primary-hue),100%,50%)] underline underline-offset-2 decoration-from-font"
-            >
+            <Link href={page.route} className="decoration-from-font">
               {more + " →"}
             </Link>
           </span>
         </p>
         {page.frontMatter?.date ? (
-          <p className="opacity-50 text-sm mt-6 leading-7">
+          <p className="text-gray-600 dark:text-gray-400 text-sm mt-6 leading-7">
             {page.frontMatter.date}
           </p>
         ) : null}

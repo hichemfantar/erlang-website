@@ -48,6 +48,7 @@ export default {
     type: "page",
     theme: {
       sidebar: false,
+      toc: true,
     },
   },
   security: {
