@@ -48,7 +48,6 @@ const themeConfig: DocsThemeConfig = {
       : `${projectName}: ${titleSuffix}`;
     const ogDescription = frontMatter.description || description;
     const ogImage = frontMatter.image || imageUrl.toString();
-    <title>{title + " - " + projectName}</title>;
 
     return (
       <>
