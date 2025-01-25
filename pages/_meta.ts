@@ -3,6 +3,9 @@ export default {
     title: "Introduction",
     type: "page",
     display: "hidden",
+    theme: {
+      layout: "full",
+    },
   },
   docs: {
     title: "Docs",

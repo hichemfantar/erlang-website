@@ -6,18 +6,18 @@ import { Callout } from 'nextra/components'
 import { Bleed } from 'nextra-theme-docs'
 import { Tabs } from 'nextra/components'
 import { Link } from 'nextra-theme-docs'
-import styles from '@components/cta.module.css'
+import styles from '@components/custom.module.css'
 import { clsx } from 'clsx';
 
 {
 // wrapped with {} to mark it as javascript so mdx will not put it under a p tag
 }
-{<h1 className={clsx(styles.headline, "hidden md:block")}>The Erlang Programming Language</h1>}
+{<h1 className={clsx(styles.headline, "hidden md:block text-center")}>The Erlang Programming Language</h1>}
 {<h1 className={clsx(styles.headline, "md:hidden")}>Erlang</h1>}
 {/* {<h1 className={"text-4xl tracking-tighter font-extrabold md:text-5xl mt-8"}>The Erlang Programming Language</h1>} */}
 {/* # The Erlang Programming Language [#overview] */}
 
-<p className="mt-6 tracking-tight mb-2 text-lg text-gray-600 dark:text-gray-500 md:!text-2xl">Practical functional programming for a parallel world</p>
+<p className="mt-6 text-center tracking-tight mb-2 text-lg text-gray-600 dark:text-gray-500 md:!text-2xl">Practical functional programming for a parallel world</p>
 
 Erlang is a programming language used to build massively scalable soft real-time systems with requirements on high availability. Some of its uses are in telecoms, banking, e-commerce, computer telephony and instant messaging. Erlang's runtime system has built-in support for concurrency, distribution and fault tolerance.
 
@@ -30,7 +30,7 @@ Erlang is a programming language used to build massively scalable soft real-time
           Erlang Quickstart <span>→</span>
         </Link>
 </div>
-{/* <a className="x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font] page_cta__i2v5_">
+{/* <a className="x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]">
   Erlang Quickstart
 </a> */}
 
