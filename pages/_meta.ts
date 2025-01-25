@@ -14,7 +14,7 @@ export default {
     title: "Downloads",
     theme: {
       toc: true,
-      // typesetting: "article",
+      sidebar: false,
     },
   },
   documentation: {
@@ -22,7 +22,7 @@ export default {
     title: "Documentation",
     theme: {
       toc: true,
-      // typesetting: "article",
+      sidebar: false,
     },
   },
   community: {
@@ -30,7 +30,7 @@ export default {
     title: "Community",
     theme: {
       toc: true,
-      // typesetting: "article",
+      sidebar: false,
     },
   },
   news: {
@@ -51,21 +51,21 @@ export default {
     type: "page",
     title: "Security",
     theme: {
-      // typesetting: "article",
+      sidebar: false,
     },
   },
   eep: {
     type: "page",
     title: "EEP",
     theme: {
-      // typesetting: "article",
+      sidebar: false,
     },
   },
   about: {
     type: "page",
     title: "About",
     theme: {
-      // typesetting: "article",
+      sidebar: false,
     },
   },
 };
