@@ -1,0 +1,90 @@
+import { Button, Cards } from 'nextra/components'
+
+<div className="mb-16 mt-10 text-center">
+  # Sponsors
+  <br />
+  <Button
+    className="!px-6 hover:!no-underline"
+    variant="outline"
+    href="http://sponsors.erlangforums.com/#info"
+    as="a"
+    target="_blank"
+    rel="noreferrer"
+  >
+    {'Become a Sponsor'}
+  </Button>
+</div>
+
+<Cards num={3}>
+  <Card
+    title="Ericsson"
+    href="http://sponsors.erlangforums.com/ericsson"
+  >
+    <>![Ericsson preview](./sponsors/ericsson@2x.png)</>
+  </Card>
+  <Card
+    title="Erlang Solutions"
+    href="http://sponsors.erlangforums.com/erlang-solutions"
+  >
+    <>![Erlang Solutions preview](./sponsors/erlang-solutions@2x.png)</>
+  </Card>
+  <Card
+    title="Erlang Ecosystem Foundation"
+    href="http://sponsors.erlangforums.com/eef"
+  >
+    <>![Erlang Ecosystem Foundation preview](./sponsors/eef@2x.png)</>
+  </Card>
+  <Card
+    title="Dashbit"
+    href="http://sponsors.erlangforums.com/dashbit"
+  >
+    <>![Dashbit preview](./sponsors/dashbit@2x.png)</>
+  </Card>
+  <Card
+    title="Pargmatic Bookshelf"
+    href="http://sponsors.erlangforums.com/pragprog"
+  >
+    <>![Pargmatic Bookshelf preview](./sponsors/pragprog@2x.png)</>
+  </Card>
+  <Card
+    title="Manning"
+    href="http://sponsors.erlangforums.com/manning"
+  >
+    <>![Manning preview](./sponsors/manning@2x.png)</>
+  </Card>
+  <Card
+    title="WyeWorks"
+    href="http://sponsors.erlangforums.com/wyeworks"
+  >
+    <>![WyeWorks preview](./sponsors/wyeworks@2x.png)</>
+  </Card>
+  <Card
+    title="Peer Stritzinger"
+    href="http://sponsors.erlangforums.com/stritzinger"
+  >
+    <>![Peer Stritzinger preview](./sponsors/stritzinger@2x.png)</>
+  </Card>
+</Cards>
+
+export const Card = Object.assign(
+  // Copy card component and add default props
+  Cards.Card.bind(),
+  {
+    displayName: 'Card',
+    defaultProps: {
+      arrow: true,
+      target: '_blank',
+      rel: 'noreferrer'
+    }
+  }
+)
+
+<style global jsx>{`
+  img {
+    aspect-ratio: 12/6.3;
+    object-fit: contain;
+    padding: 4.25rem;
+    background-color: #111111;
+    width: 100%;
+  }
+`}</style>

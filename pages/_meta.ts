@@ -72,4 +72,13 @@ export default {
       sidebar: false,
     },
   },
+  sponsors: {
+    type: "page",
+    title: "Sponsors",
+    theme: {
+      sidebar: false,
+      typesetting: 'article',
+      layout: 'full',
+    },
+  },
 };
