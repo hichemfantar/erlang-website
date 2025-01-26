@@ -10,8 +10,11 @@ const withNextra = nextra({
   defaultShowCopyCode: true,
 });
 
-export default withNextra({
+/** @type {import('next').NextConfig} */
+const nextConfig = withNextra({
   output: "export",
   images: { unoptimized: true },
   reactStrictMode: true,
 });
+
+export default nextConfig

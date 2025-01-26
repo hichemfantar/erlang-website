@@ -2,7 +2,12 @@ import "intersection-observer";
 import { useCallback, useEffect, useRef } from "react";
 import { useInView } from "react-intersection-observer";
 
-export default function Video({ src, caption, ratio, className = "" }:{
+export default function Video({
+  src,
+  caption,
+  ratio,
+  className = "",
+}: {
   src: string;
   caption?: string;
   ratio: number;
@@ -14,7 +19,7 @@ export default function Video({ src, caption, ratio, className = "" }:{
   const videoRef = useRef<HTMLVideoElement>();
 
   const setRefs = useCallback(
-    (node:HTMLVideoElement) => {
+    (node: HTMLVideoElement) => {
       // Ref's from useRef needs to have the node assigned to `current`
       videoRef.current = node;
       // Callback refs, like the one from `useInView`, is a function that takes the node as an argument

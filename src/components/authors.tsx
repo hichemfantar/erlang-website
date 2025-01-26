@@ -1,4 +1,8 @@
-export default function Authors({ date, children, by = "by" }:{
+export default function Authors({
+  date,
+  children,
+  by = "by",
+}: {
   date: string;
   children: React.ReactNode;
   by?: string;
@@ -10,10 +14,7 @@ export default function Authors({ date, children, by = "by" }:{
   );
 }
 
-export function Author({ name, link }:{
-  name: string;
-  link: string;
-}) {
+export function Author({ name, link }: { name: string; link: string }) {
   return (
     <span className="after:content-[','] last:after:content-['']">
       <a
