@@ -1,6 +1,6 @@
-import { useRouter } from "next/router";
-import { DocsThemeConfig, useConfig } from "nextra-theme-docs";
 import Logo from "@components/logo";
+import { useRouter } from "next/router";
+import { DocsThemeConfig, ThemeSwitch, useConfig } from "nextra-theme-docs";
 
 const projectName = "Erlang";
 
@@ -94,6 +94,10 @@ const themeConfig: DocsThemeConfig = {
   },
   footer: {
     content: null,
+    component: null,
+  },
+  navbar: {
+    extraContent: <ThemeSwitch lite />,
   },
 };
 
