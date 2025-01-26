@@ -1,4 +1,3 @@
-import "intersection-observer";
 import { useCallback, useEffect, useRef } from "react";
 import { useInView } from "react-intersection-observer";
 

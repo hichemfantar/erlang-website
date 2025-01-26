@@ -17,7 +17,6 @@
   "dependencies": {
     "clsx": "^2.0.0",
     "focus-visible": "^5.2.0",
-    "intersection-observer": "^0.12.2",
     "next": "^14",
     "nextra": "^3",
     "nextra-theme-docs": "^3",
