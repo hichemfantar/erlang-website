@@ -1,4 +1,4 @@
-export default function Logo({ height }) {
+export default function Logo({ height }:{ height: number }) {
   return (
     <svg
       height={height}

@@ -1,4 +1,4 @@
-import Logo from "@components/logo";
+import Logo from "@/components/logo";
 import { useRouter } from "next/router";
 import { DocsThemeConfig, ThemeSwitch, useConfig } from "nextra-theme-docs";
 
