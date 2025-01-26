@@ -12,18 +12,26 @@ import { clsx } from 'clsx';
 {
 // wrapped with {} to mark it as javascript so mdx will not put it under a p tag
 }
-{<h1 className={clsx(styles.headline, "hidden md:block xtext-center")}>The Erlang Programming Language</h1>}
+{
+<h1 className={clsx(styles.headline, "hidden md:block xtext-center")}>
+The Erlang Programming Language
+</h1>
+}
 {<h1 className={clsx(styles.headline, "md:hidden")}>Erlang</h1>}
 {/* {<h1 className={"text-4xl tracking-tighter font-extrabold md:text-5xl mt-8"}>The Erlang Programming Language</h1>} */}
 {/* # The Erlang Programming Language [#overview] */}
 
+{
 <p className="mt-6 xtext-center tracking-tight mb-2 text-lg text-gray-600 dark:text-gray-400 md:!text-2xl">Practical functional programming for a parallel world</p>
+}
 
-{/* <div className="mt-16 mb-20 text-center">
+{/* {<div className="mt-16 mb-20 text-center">
   [Erlang Quickstart]()
-</div> */}
+</div>} */}
 
+{
 <div className='flex xjustify-center mt-4'><Link className={styles.cta} href="/downloads">Download Erlang/OTP <span>→</span></Link></div>
+}
 {/* <a className="x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]">
   Erlang Quickstart
 </a> */}

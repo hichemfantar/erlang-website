@@ -77,8 +77,8 @@ export default {
     title: "Sponsors",
     theme: {
       sidebar: false,
-      typesetting: 'article',
-      layout: 'full',
+      typesetting: "article",
+      layout: "full",
     },
   },
 };
