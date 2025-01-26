@@ -1,6 +1,7 @@
 {
   "name": "erlang-org",
   "version": "2.0.0",
+  "private": true,
   "description": "The erlang.org website",
   "engines": {
     "node": ">=20"
