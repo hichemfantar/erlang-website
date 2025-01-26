@@ -1,4 +1,4 @@
-import cn from 'clsx'
+import cn from "clsx";
 
 export default function Logo({ height }: { height: number }) {
   return (
@@ -9,11 +9,11 @@ export default function Logo({ height }: { height: number }) {
       fillRule="evenodd"
       strokeLinejoin="round"
       strokeMiterlimit={2}
-      className={cn('transition-all duration-1000 dark:invert',
-        '[mask-image:linear-gradient(60deg,#000_25%,rgba(0,0,0,.2)_50%,#000_75%)] [mask-position:0] [mask-size:400%]',
-        'hover:[mask-position:100%]'
+      className={cn(
+        "transition-all duration-1000 dark:invert",
+        "[mask-image:linear-gradient(60deg,#000_25%,rgba(0,0,0,.2)_50%,#000_75%)] [mask-position:0] [mask-size:400%]",
+        "hover:[mask-position:100%]",
       )}
-
     >
       <g transform="matrix(4.16667 0 0 4.16667 -42 -44)">
         <path
