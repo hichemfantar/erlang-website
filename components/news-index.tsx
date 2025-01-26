@@ -3,7 +3,7 @@ import { Link } from "nextra-theme-docs";
 import { getPagesUnderRoute } from "nextra/context";
 
 export default function NewsIndex({ more = "Read more" }) {
-  const pageMap = getPagesUnderRoute(`/blog`) as unknown as MdxFile[];
+  const pageMap = getPagesUnderRoute(`/news`) as unknown as MdxFile[];
 
   return pageMap.map((page) => {
     return (
