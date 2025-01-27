@@ -6,6 +6,11 @@ The project uses [npm](https://nodejs.org/en/learn/getting-started/an-introducti
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+If you get weird errors or redirects then try these fixes:
+
+- Clear the browser localhost cookies
+- Delete the `.next` folder
+
 ## Getting Started
 
 First, run the development server:
