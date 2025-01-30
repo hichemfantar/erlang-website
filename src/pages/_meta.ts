@@ -62,7 +62,7 @@ const meta = {
     type: "page",
     title: "EEP",
     theme: {
-      sidebar: false,
+      sidebar: true,
     },
   },
   about: {
