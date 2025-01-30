@@ -77,7 +77,7 @@ const themeConfig: DocsThemeConfig = {
     float: true,
   },
   sidebar: {
-    defaultMenuCollapseLevel: 1,
+    defaultMenuCollapseLevel: 2,
   },
   search: {
     placeholder: "Search erlang.org",
