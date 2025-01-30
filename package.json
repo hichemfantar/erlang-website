@@ -6,10 +6,12 @@
   "engines": {
     "node": ">=20"
   },
+  "type": "module",
   "scripts": {
     "dev": "next",
     "debug": "cross-env NODE_OPTIONS='--inspect' next dev",
     "start": "next start",
+    "prebuild": "node src/nextra-remote-filepaths/fetch.js",
     "build": "next build",
     "lint": "next lint",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,css,scss,json}\""

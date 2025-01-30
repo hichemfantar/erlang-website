@@ -12,7 +12,7 @@ const withNextra = nextra({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = withNextra({
-  output: "export",
+  // output: "export",
   images: { unoptimized: true },
   reactStrictMode: true,
 });

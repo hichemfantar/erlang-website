@@ -1,0 +1,10 @@
+{
+  "user": "hichemfantar",
+  "repo": "erlang-eep-fork",
+  "branch": "mdx",
+  "docsPath": "eeps/",
+  "filePaths": [
+    "eep-0000.md"
+  ],
+  "nestedMeta": {}
+}
