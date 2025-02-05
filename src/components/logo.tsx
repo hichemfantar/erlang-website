@@ -10,7 +10,7 @@ export default function Logo({ height }: { height: number }) {
       strokeLinejoin="round"
       strokeMiterlimit={2}
       className={cn(
-        "transition-all duration-1000 dark:invert",
+        "transition-all duration-1000 dark:invert motion-reduce:transition-none",
         "[mask-image:linear-gradient(60deg,#000_25%,rgba(0,0,0,.2)_50%,#000_75%)] [mask-position:0] [mask-size:400%]",
         "hover:[mask-position:100%]",
       )}
