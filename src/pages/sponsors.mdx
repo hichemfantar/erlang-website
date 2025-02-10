@@ -66,18 +66,9 @@ import { Button, Cards } from 'nextra/components'
   </Card>
 </Cards>
 
-export const Card = Object.assign(
-  // Copy card component and add default props
-  Cards.Card.bind(),
-  {
-    displayName: 'Card',
-    defaultProps: {
-      arrow: true,
-      target: '_blank',
-      rel: 'noreferrer'
-    }
-  }
-)
+export function Card({ arrow = true, target = '_blank', rel = 'noreferrer', ...props }) {
+  return <Cards.Card {...props} arrow={arrow} target={target} rel={rel} />;
+}
 
 <style global jsx>{`
   img {
